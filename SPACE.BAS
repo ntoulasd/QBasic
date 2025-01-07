@@ -1,8 +1,3 @@
-
-
-
-
-
 ON ERROR GOTO 3000
 10 SCREEN 7
 SCREEN 8: CLEAR
@@ -11,20 +6,20 @@ KEY OFF: BOMB$ = "c14 r1 u1 c4 u4 c14 l1 d1 c4 d3 u1 l1 c14 u2 r1 c4 r2 c14 d3 c
 BOMBE$ = "r1 u1 u4 l1 d1 d3 u1 l1 u2 r1 r2 d3 d2 l1 l1"
 CLS : COLOR 1
 LOCATE 5, 1
-PRINT "      ��������۱� �������۱�      ����۱�       ��������۱�  ��������۱�"
-PRINT "     ��۱�        �۱�    ۱�    �۱� �۱�     �۱�          �۱"
-PRINT "      ��۱�       �۱�    ۱�   �۱�   �۱�   �۱�           �۱"
-PRINT "       ��۱�      �������۱�   �۱�     �۱�  �۱�           �۱"
-PRINT "        ��۱�     �۱�         ����������۱�  �۱�           ��������۱�"
-PRINT "         ��۱�    �۱�         �۱�     �۱�  �۱�           �۱�"
-PRINT "          ��۱�   �۱�         �۱�     �۱�  �۱�           �۱�"
-PRINT "           ��۱�  �۱�         �۱�     �۱�   �۱�          �۱�"
-PRINT "    ��������۱�   �۱�         �۱�     �۱�    ��������۱�  ��������۱�"
+PRINT "      █████████▒░ ████████▒░      █████▒░       █████████▒░  █████████▒░"
+PRINT "     ███▒░        ██▒░    █▒░    ██▒░ ██▒░     ██▒░          ██▒"
+PRINT "      ███▒░       ██▒░    █▒░   ██▒░   ██▒░   ██▒░           ██▒"
+PRINT "       ███▒░      ████████▒░   ██▒░     ██▒░  ██▒░           ██▒"
+PRINT "        ███▒░     ██▒░         ███████████▒░  ██▒░           █████████▒░"
+PRINT "         ███▒░    ██▒░         ██▒░     ██▒░  ██▒░           ██▒░"
+PRINT "          ███▒░   ██▒░         ██▒░     ██▒░  ██▒░           ██▒░"
+PRINT "           ███▒░  ██▒░         ██▒░     ██▒░   ██▒░          ██▒░"
+PRINT "    █████████▒░   ██▒░         ██▒░     ██▒░    █████████▒░  █████████▒░"
 PRINT : PRINT
-PRINT "                             �      �     ���Ŀ"
-PRINT "                             �      �     � � �"
-PRINT "                         �����      �     � � �": PRINT : PRINT
-PRINT "                           DOULAS      Company ": PRINT
+PRINT "                             │      │     ├─┬─┐"
+PRINT "                             │      │     │ │ │"
+PRINT "                         └───┘      │     │ │ │": PRINT : PRINT
+PRINT "                           NTOULAS      Company ": PRINT
 PRINT "                              (c)  1992-94"
 200 IN$ = INKEY$
 IF IN$ = "" THEN GOTO 200
@@ -64,13 +59,13 @@ LOCATE 15, LI2: READ RD$: PRINT RD$: PLAY "e16": IF LI2 = 12 OR LI2 = 25 THEN PL
 IF INKEY$ <> "" THEN GOTO 550
 LI2 = LI2 + 1
 NEXT X
-550 LOCATE 13, 3: PRINT "�� ������� ����嫜� ⮦�� ����ᢜ�"
-LOCATE 15, 2: PRINT "����㠤�� ��⧜� �� ���� ���������驞�"
-DATA "�","�"," ","�","�","�","�","�","�","�","�"," ","�","�","�","�","�","�","�","�"," ","�","�","�","�","�"," ","�","�","�","�","�","�","�","�"," "
-DATA "�","�","�","�","�","�","�","�","�"," ","�","�","�","�","�","�"," ","�","�"," ","�","�","�","�"," ","�","�","�","�","�","�","�","�","�","�","�","�","�"
-580 PLAY "c4": SOUND 19000, 5: LOCATE 19, 6: INPUT "���櫜 �驜 �o �o�� �o� ", NAM$
+550 LOCATE 13, 3: PRINT "Σε μερικούς πλανήτες έχουν εισβάλει"
+LOCATE 15, 2: PRINT "εξωγήινοι πρέπει να τους εξουδετερώσεις"
+DATA "Σ","ε"," ","μ","ε","ρ","ι","κ","ο","ύ","ς"," ","π","λ","α","ν","ί","τ","ε","ς"," ","έ","χ","ο","υ","ν"," ","ε","ι","σ","β","ά","λ","ε","ι"," "
+DATA "ε","ξ","ω","γ","ή","ι","ν","ο","ι"," ","π","ρ","έ","π","ε","ι"," ","ν","α"," ","τ","ο","υ","ς"," ","ε","ξ","ο","υ","δ","ε","τ","ε","ρ","ώ","σ","η","ς"
+580 PLAY "c4": SOUND 19000, 5: LOCATE 19, 6: INPUT "Πιλότε δώσε τo όνoμά σoυ ", NAM$
 IF NAM$ = "" THEN GOTO 580
-IF LEN(NAM$) >= 8 THEN LOCATE 23, 12: PRINT "�⮨� 7 ������㨜�": LOCATE 19, 30: PRINT "           ": GOTO 580
+IF LEN(NAM$) >= 8 THEN LOCATE 23, 12: PRINT "Μέχρι 7 χαρακτήρες": LOCATE 19, 30: PRINT "           ": GOTO 580
 SCORE = 0: FIR = 0: FIR2 = 0: FIR3 = 0: FIR4 = 0: FIR5 = 0: PLANIT = 0
 PPLAN = 0: CH$ = "": EXRS = 0: SCORE1 = 0
 IF PLANIT = 0 THEN DIM d(69)
@@ -90,7 +85,7 @@ SCREEN , , 1, 1
 FOR X = 50 TO 590 STEP 4
 LINE (320, 20)-(X, 70), 2
 NEXT X
-COLOR 1: LOCATE 3, 38: PRINT "����ͻ": Z = 10: C = 25: V = 40: B = 55: M = 70: COLOR 7: NL$ = CHR$(1) + " "
+COLOR 1: LOCATE 3, 38: PRINT "╔════╗": Z = 10: C = 25: V = 40: B = 55: M = 70: COLOR 7: NL$ = CHR$(1) + " "
 COLOR 4: LOCATE 1, 68: PRINT "SCORE"; SCORE: COLOR 7: SAV = 19
 WHILE CH$ <> CHR$(27) OR LIF <> 0
 COLOR 4: LOCATE 10, Z: PRINT " \ / "
@@ -139,23 +134,23 @@ IF M = 75 THEN M = 1: LOCATE 10, 75: PRINT "     ": LOCATE 11, 75: PRINT "     "
 COLOR 14: IF FIRS = 1 THEN LOCATE SCOD, H: PRINT " "
 IF FIRS = 1 THEN LOCATE SCOD + 1, H: PRINT CHR$(25)
 IF FIRS = 1 THEN SCOD = SCOD + 1
-IF SCOD = 22 THEN FIRS = 0: FIR = 0: SCOD = 12: COLOR 4: IF H <> 1 THEN LOCATE 22, H - 1: PRINT "Ĥ�": LOCATE 22, H - 1: PRINT "   ": SOUND 37, 1
+IF SCOD = 22 THEN FIRS = 0: FIR = 0: SCOD = 12: COLOR 4: IF H <> 1 THEN LOCATE 22, H - 1: PRINT "─ν─": LOCATE 22, H - 1: PRINT "   ": SOUND 37, 1
 IF FIRS2 = 2 THEN LOCATE SCOD2, H2: PRINT " "
 IF FIRS2 = 2 THEN LOCATE SCOD2 + 1, H2: PRINT CHR$(25)
 IF FIRS2 = 2 THEN SCOD2 = SCOD2 + 1
-IF SCOD2 = 22 THEN FIRS2 = 0: FIR2 = 0: SCOD2 = 12: COLOR 4: IF H2 <> 1 THEN LOCATE 22, H2 - 1: PRINT "Ĥ�": LOCATE 22, H2 - 1: PRINT "   ": SOUND 37, 1
+IF SCOD2 = 22 THEN FIRS2 = 0: FIR2 = 0: SCOD2 = 12: COLOR 4: IF H2 <> 1 THEN LOCATE 22, H2 - 1: PRINT "─ν─": LOCATE 22, H2 - 1: PRINT "   ": SOUND 37, 1
 IF FIRS3 = 3 THEN LOCATE SCOD3, H3: PRINT " "
 IF FIRS3 = 3 THEN LOCATE SCOD3 + 1, H3: PRINT CHR$(25)
 IF FIRS3 = 3 THEN SCOD3 = SCOD3 + 1
-IF SCOD3 = 22 THEN FIRS3 = 0: FIR3 = 0: SCOD3 = 12: COLOR 4: IF H3 <> 1 THEN LOCATE 22, H3 - 1: PRINT "Ĥ�": LOCATE 22, H3 - 1: PRINT "   ": SOUND 37, 1
+IF SCOD3 = 22 THEN FIRS3 = 0: FIR3 = 0: SCOD3 = 12: COLOR 4: IF H3 <> 1 THEN LOCATE 22, H3 - 1: PRINT "─ν─": LOCATE 22, H3 - 1: PRINT "   ": SOUND 37, 1
 IF FIRS4 = 4 THEN LOCATE SCOD4, H4: PRINT " "
 IF FIRS4 = 4 THEN LOCATE SCOD4 + 1, H4: PRINT CHR$(25)
 IF FIRS4 = 4 THEN SCOD4 = SCOD4 + 1
-IF SCOD4 = 22 THEN FIRS4 = 0: FIR4 = 0: SCOD4 = 12: COLOR 4: IF H4 <> 1 THEN LOCATE 22, H4 - 1: PRINT "Ĥ�": LOCATE 22, H4 - 1: PRINT "   ": SOUND 37, 1
+IF SCOD4 = 22 THEN FIRS4 = 0: FIR4 = 0: SCOD4 = 12: COLOR 4: IF H4 <> 1 THEN LOCATE 22, H4 - 1: PRINT "─ν─": LOCATE 22, H4 - 1: PRINT "   ": SOUND 37, 1
 IF FIRS5 = 5 THEN LOCATE SCOD5, H5: PRINT " "
 IF FIRS5 = 5 THEN LOCATE SCOD5 + 1, H5: PRINT CHR$(25)
 IF FIRS5 = 5 THEN SCOD5 = SCOD5 + 1
-IF SCOD5 = 22 THEN FIRS5 = 0: FIR5 = 0: SCOD5 = 12: COLOR 4: IF H5 <> 1 THEN LOCATE 22, H5 - 1: PRINT "Ĥ�": LOCATE 22, H5 - 1: PRINT "   ": SOUND 37, 1
+IF SCOD5 = 22 THEN FIRS5 = 0: FIR5 = 0: SCOD5 = 12: COLOR 4: IF H5 <> 1 THEN LOCATE 22, H5 - 1: PRINT "─ν─": LOCATE 22, H5 - 1: PRINT "   ": SOUND 37, 1
 IF SPACECODE = 1 THEN GOTO 1410
 IF SCOD = 21 THEN IF N + 1 < H AND N + 15 > H THEN liv = liv - 1: GOSUB 2380
 IF SCOD2 = 21 THEN IF N + 1 < H2 AND N + 15 > H2 THEN liv = liv - 1: GOSUB 2380
@@ -163,9 +158,9 @@ IF SCOD3 = 21 THEN IF N + 1 < H3 AND N + 15 > H3 THEN liv = liv - 1: GOSUB 2380
 IF SCOD4 = 21 THEN IF N + 1 < H4 AND N + 15 > H4 THEN liv = liv - 1: GOSUB 2380
 IF SCOD5 = 21 THEN IF N + 1 < H5 AND N + 15 > H5 THEN liv = liv - 1: GOSUB 2380
 1410 COLOR 7
-LOCATE 21, N: PRINT "  ����͵ ����ͻ  "
-LOCATE 22, N: PRINT "       � �       "
-LOCATE 23, N: PRINT "    �������ͻ    "
+LOCATE 21, N: PRINT "  ╔════╡ ╞════╗  "
+LOCATE 22, N: PRINT "       │ │       "
+LOCATE 23, N: PRINT "    ╔══╧╦╧══╗    "
 IF d(17) = 2 OR d(18) = 2 THEN GOTO 1540
 IF d(19) = 2 OR d(20) = 2 THEN GOTO 1540
 COLOR 4: IF EXRS = 60 THEN EXRS = 0: liv = liv + 1: SOUND 500, 3: SOUND 600, 6: IF liv > lives THEN lives = liv
@@ -183,30 +178,30 @@ LINE (320, 20)-(X, Y), 4: CIRCLE (X, Y), 2, 2: PSET (X, Y), 2
 NEXT N
 SCORE = SCORE + 50: EXRS = 0: COLOR , 0
 COLOR 4: LOCATE 1, 68: PRINT "SCORE"; SCORE: COLOR 1
-LOCATE 15, 29: PRINT "  ���x�� "; NAM$; " �� ��x�����o磜 "
-LOCATE 16, 27: PRINT "  ��� ������ੜ� ��� ����嫞 ��� "
-LOCATE 17, 36: PRINT "  ��� PLANIT"; PPLAN
+LOCATE 15, 29: PRINT "  Παίκτη "; NAM$; " σε ευχαριστούμε "
+LOCATE 16, 27: PRINT "  που ελευθέρωσες τον πλανήτη μας "
+LOCATE 17, 36: PRINT "  τον PLANIT"; PPLAN
 1650 IF INKEY$ <> CHR$(32) THEN GOTO 1650 ELSE GOTO 620
 1660 COLOR 8: LOCATE 5, 20
-PRINT " ������۰   ����۰   �۰   �۰  ������۰": LOCATE 6, 20
-PRINT "�۰        �۰  �۰  ��۰ ��۰  �۰     ": LOCATE 7, 20
-PRINT "�۰  ��۰  ������۰  �۰�۰�۰  ������۰": LOCATE 8, 20
-PRINT "��۰  �۰  �۰  �۰  �۰   �۰  �۰     ": LOCATE 9, 20
-PRINT " �����۰   �۰  �۰  �۰   �۰  ������۰": LOCATE 12, 20
-PRINT " ����۰  �۰    �۰  �������۰  �������۰": LOCATE 13, 20
-PRINT "�۰  �۰ �۰    �۰  �۰        ��     ۰": LOCATE 14, 20
-PRINT "�۰  �۰ �۰    �۰  �������۰  �������۰": LOCATE 15, 20
-PRINT "�۰  �۰  �۰  �۰   �۰        �۰ �۰  ": LOCATE 16, 20
-PRINT " ����۰     ��۰     �������۰  �۰   �۰"
+PRINT " ███████░   █████░   ██░   ██░  ███████░": LOCATE 6, 20
+PRINT "██░        ██░  ██░  ███░ ███░  ██░     ": LOCATE 7, 20
+PRINT "██░  ███░  ███████░  ██░██░██░  ███████░": LOCATE 8, 20
+PRINT "███░  ██░  ██░  ██░  ██░   ██░  ██░     ": LOCATE 9, 20
+PRINT " ██████░   ██░  ██░  ██░   ██░  ███████░": LOCATE 12, 20
+PRINT " █████░  ██░    ██░  ████████░  ████████░": LOCATE 13, 20
+PRINT "██░  ██░ ██░    ██░  ██░        ██     █░": LOCATE 14, 20
+PRINT "██░  ██░ ██░    ██░  ████████░  ████████░": LOCATE 15, 20
+PRINT "██░  ██░  ██░  ██░   ██░        ██░ ██░  ": LOCATE 16, 20
+PRINT " █████░     ███░     ████████░  ██░   ██░"
 FOR X = 0 TO 2000: NEXT X
 CLS : SCREEN 0: WIDTH 40
 LOCATE 1, 2: COLOR 1
-PRINT "��������������������ͻ"
+PRINT "╔════════════════════╗"
 FOR X = 2 TO 22
-LOCATE X, 2: PRINT "�                    �"
+LOCATE X, 2: PRINT "║                    ║"
 NEXT X
 LOCATE 23, 2
-PRINT "��������������������ͼ"
+PRINT "╚════════════════════╝"
 OPEN "i", #1, "space.sco": COLOR 5: FG = 3
 FOR X = 1 TO 10
 INPUT #1, A, B$, d$
@@ -216,11 +211,11 @@ COLOR 5: LOCATE FG + 1, 10: PRINT d$
 FG = FG + 2
 NEXT X
 CLOSE
-LOCATE 3, 25: COLOR 4: PRINT "���櫦�  "; NAM$
+LOCATE 3, 25: COLOR 4: PRINT "Πιλότος  "; NAM$
 LOCATE 5, 30: COLOR 14
 PRINT "SCORE"
 COLOR 2: LOCATE 6, 29: PRINT SCORE: FOR X = 0 TO 500: NEXT X: LOCATE 9, 26
-PRINT "��� 1000 *"; lives
+PRINT "Ζωές 1000 *"; lives
 LOCATE 10, 30: PRINT lives * 1000
 LOCATE 18, 30: COLOR 14: SCORE1 = (lives * 1000)
 PRINT "SCORE": COLOR 2
@@ -272,9 +267,8 @@ IF SPACE = 3 THEN SPACECODE = 1 ELSE SPACE = 0
 B$ = ""
 RETURN
 3000 SCREEN 0: WIDTH 80, 25: COLOR 15: BEEP
-CLS : PRINT "��㡘 ⤘ �៦� ������� ��� � ���� ������ ��磜�� "; ERL
-IF ERR = 5 THEN PRINT "�� ⮜�� ��� ���ᢞ�� �ᨫ� ������� ��� �� ��奜�� �� �����因.": END
-IF ERR = 53 THEN PRINT "��姜� �� ����� SPACE.SCO.": END
-PRINT "��ᨮ�� ��o�� �៦� ��� �����因 ��� ⫩� ������ᜠ ..."
+CLS : PRINT "Βρήκα ένα λάθος παρακάτω από ή στην γραμμή νούμερο "; ERL
+IF ERR = 5 THEN PRINT "Δεν έχεις την κατάλληλη κάρτα γραφικών για να παίξεις το παιχνίδι.": END
+IF ERR = 53 THEN PRINT "Λείπει το αρχείο SPACE.SCO.": END
+PRINT "Υπάρχει κάποιο λάθος στο παιχνίδι και έτσι σταματάει ..."
 END
-
